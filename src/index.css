@@ -78,3 +78,7 @@ svg.drag-over {
   font-size: 13px;
   cursor: pointer;
 }
+
+.modal-dialog .btn-close {
+  display: none;
+}

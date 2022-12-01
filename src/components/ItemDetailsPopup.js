@@ -9,7 +9,6 @@ export default function ItemDetailsPopup({ show, onHide }) {
       size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
-      closeButton={false}
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
