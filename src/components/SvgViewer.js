@@ -14,7 +14,6 @@ export default function SvgViewer({ draggedData, droppedData }) {
   }, []);
 
   useEffect(() => {
-    console.log("useEffect SvgViewer");
     SvgAddDoor.draw(nodes);
   }, [nodes]);
 
