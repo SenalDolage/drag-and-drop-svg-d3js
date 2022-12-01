@@ -3,13 +3,15 @@ import * as d3 from "d3";
 
 import SvgAddDoor from "../utils/SvgAddDoor";
 import SvgZoom from "../utils/SvgZoom";
+import SvgUpdateDoorLocation from "../utils/SvgUpdateDoorLocation";
 
 export default function SvgViewer({ draggedData, droppedData }) {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const nodes = [];
 
   useEffect(() => {
     SvgZoom.zoom();
-  }, [])
+  }, []);
 
   useEffect(() => {
     console.log("useEffect SvgViewer");
@@ -69,6 +71,7 @@ export default function SvgViewer({ draggedData, droppedData }) {
 
     // passing dropped data to parent component
     droppedData(draggedData.dragObject);
+    SvgUpdateDoorLocation.update();
     return false;
   };
 

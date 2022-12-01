@@ -16,7 +16,7 @@ export default class SvgAddDoor {
     // Draw a group node that will contain the door
     newGroup
       .attr("class", "node")
-      .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")")
+      .attr("transform", (d) => "translate(" + d.x + "," + d.y + ") scale(1)")
       .attr("door-id", (d) => d.name);
 
     // Append the circle
