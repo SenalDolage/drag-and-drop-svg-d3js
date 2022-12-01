@@ -1,13 +1,80 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.dragable-item-dot {
+  border-radius: 50%;
+  min-height: 20px;
+  min-width: 20px;
+  display: inline-block;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.node rect {
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.node text {
+  font-size: 20px;
+  color: black;
+}
+
+svg {
+  /* width: 400px;
+  height: 200px;
+  margin: 5px;
+  background-color: gray;
+  border: 3px solid gray; */
+}
+
+.svg-container {
+  overflow: hidden;
+}
+
+.svg-inner {
+  cursor: move;
+}
+
+svg.drag-over {
+  border: 3px dashed red;
+}
+
+.page-content {
+  min-height: calc(100vh - 96px);
+  padding: 30px 0;
+  background-color: #eeeeee;
+}
+
+.door-title {
+  color: #fff;
+  text-align: left;
+}
+
+.sidebar {
+  background-color: #0d6efd;
+  padding: 25px 10px;
+  border-radius: 5px;
+}
+
+.dropped-item-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropped-item-list-item span {
+  font-size: 13px;
+  cursor: pointer;
 }
