@@ -18,6 +18,7 @@ code {
   background-color: #eeeeee;
 }
 
+/* Svg container */
 .svg-container .node rect {
   stroke: black;
   stroke-width: 1px;
@@ -40,6 +41,7 @@ code {
   border: 3px dashed red;
 }
 
+/* Sidebar */
 .sidebar {
   background-color: #0d6efd;
   padding: 25px 10px;
@@ -71,6 +73,7 @@ code {
   cursor: pointer;
 }
 
+/* Item detail modal */
 .item-details-modal .modal-dialog .btn-close {
   display: none;
 }
