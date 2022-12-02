@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useContext} from "react";
 import * as d3 from "d3";
 
 import SvgAddDoor from "../utils/SvgAddDoor";
 import SvgZoom from "../utils/SvgZoom";
 import SvgUpdateDoorLocation from "../utils/SvgUpdateDoorLocation";
+import { DoorsContext } from "../context/DoorsContext";
 
-export default function SvgViewer({ draggedData, droppedData }) {
+export default function SvgViewer() {
+  const { draggingData } = useContext(DoorsContext);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const nodes = [];
 
@@ -52,15 +54,15 @@ export default function SvgViewer({ draggedData, droppedData }) {
     // Get the correct coordinates for this node
     const { x, y } = convertCoordinatesDOMtoSVG(
       d3.select("svg"),
-      e.clientX - draggedData.offset[0],
-      e.clientY - draggedData.offset[1]
+      e.clientX - draggingData.offset[0],
+      e.clientY - draggingData.offset[1]
     );
 
     // Add the node to the list of nodes.
     nodes.push({
       id: nodes.length + 1,
-      name: draggedData.dragObject.name,
-      color: draggedData.dragObject.color,
+      name: draggingData.dragObject.name,
+      color: draggingData.dragObject.color,
       x,
       y,
     });
@@ -68,8 +70,6 @@ export default function SvgViewer({ draggedData, droppedData }) {
     // Redraw the nodes
     SvgAddDoor.draw(nodes);
 
-    // passing dropped data to parent component
-    droppedData(draggedData.dragObject);
     SvgUpdateDoorLocation.update();
     return false;
   };

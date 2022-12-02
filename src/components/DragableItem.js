@@ -16,7 +16,7 @@ function DragableItem({ dragObject, onDragStart, onDragEnd, bgColor }) {
 
   const onDragEnding = (e) => {
     e.stopPropagation();
-    onDragEnd();
+    onDragEnd(e.target);
   };
 
   return (

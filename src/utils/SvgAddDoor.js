@@ -26,5 +26,9 @@ export default class SvgAddDoor {
       .attr("cy", 0)
       .attr("r", 10)
       .attr("fill", (d) => d.color);
+
+    newGroup.on("click", () => {
+      console.log("newGroup click");
+    });
   }
 }

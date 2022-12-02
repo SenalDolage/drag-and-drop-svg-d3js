@@ -1,0 +1,39 @@
+{
+  "doors": [
+    {
+      "name": "D1",
+      "color": "green",
+      "id": "123",
+      "manufacturer": "Amila & sons",
+      "material": "Wood"
+    },
+    {
+      "name": "D2",
+      "color": "green",
+      "id": "456",
+      "manufacturer": "Manufacturer One",
+      "material": "Aluminium"
+    },
+    {
+      "name": "D3",
+      "color": "green",
+      "id": "789",
+      "manufacturer": "Manufacturer Two",
+      "material": "Glass"
+    },
+    {
+      "name": "D4",
+      "color": "green",
+      "id": "741",
+      "manufacturer": "Manufacturer Three",
+      "material": "Metal"
+    },
+    {
+      "name": "D5",
+      "color": "green",
+      "id": "852",
+      "manufacturer": "Manufacturer Four",
+      "material": "Wood"
+    }
+  ]
+}

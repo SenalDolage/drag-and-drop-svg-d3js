@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
 import DragableItem from "./DragableItem";
+import { DoorsContext } from "../context/DoorsContext";
 
-const doors = [
-  { name: "D1", color: "green", uid: "123" },
-  { name: "D2", color: "green", uid: "456" },
-  { name: "D3", color: "green", uid: "789" },
-  { name: "D4", color: "green", uid: "741" },
-  { name: "D5", color: "green", uid: "852" },
-];
+export default function DragableList() {
+  const {
+    unusedDoors,
+    setUnusedDoors,
+    setUsedDoors,
+    setDraggingData,
+    allDoors,
+  } = useContext(DoorsContext);
 
-export default function DragableList({ setDragData }) {
   const onDragStart = (dragData) => {
-    setDragData(dragData);
+    setDraggingData(dragData);
   };
 
-  const onDragEnd = () => {};
+  const onDragEnd = (dragDataNode) => {
+    setUnusedDoors(
+      unusedDoors.filter(
+        (item) => item.name !== dragDataNode.getAttribute("door-id")
+      )
+    );
+
+    setUsedDoors((oldArray) => [
+      ...oldArray,
+      allDoors.find(
+        (item) => item.name === dragDataNode.getAttribute("door-id")
+      ),
+    ]);
+  };
 
   return (
     <div className="dragging-blocks">
@@ -33,12 +47,14 @@ export default function DragableList({ setDragData }) {
       </InputGroup>
 
       <ListGroup defaultActiveKey="#link1">
-        {doors.map((door) => (
-          <ListGroup.Item action key={door.name}>
+        {unusedDoors?.map((door) => (
+          <ListGroup.Item action key={door.id}>
+            <span>{door.name}</span> 
+            &nbsp;
             <DragableItem
               dragObject={door}
               onDragStart={(dragData) => onDragStart(dragData)}
-              onDragEnd={() => onDragEnd()}
+              onDragEnd={(dragDataNode) => onDragEnd(dragDataNode)}
               bgColor={door.color}
             />
           </ListGroup.Item>

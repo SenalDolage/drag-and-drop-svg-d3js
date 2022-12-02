@@ -12,54 +12,32 @@ code {
     monospace;
 }
 
-.dragable-item-dot {
-  border-radius: 50%;
-  min-height: 20px;
-  min-width: 20px;
-  display: inline-block;
-  padding: 5px;
-  font-size: 12px;
-}
-
-.node rect {
-  stroke: black;
-  stroke-width: 1px;
-}
-
-.node text {
-  font-size: 20px;
-  color: black;
-}
-
-svg {
-  /* width: 400px;
-  height: 200px;
-  margin: 5px;
-  background-color: gray;
-  border: 3px solid gray; */
-}
-
-.svg-container {
-  overflow: hidden;
-}
-
-.svg-inner {
-  cursor: move;
-}
-
-svg.drag-over {
-  border: 3px dashed red;
-}
-
 .page-content {
   min-height: calc(100vh - 96px);
   padding: 30px 0;
   background-color: #eeeeee;
 }
 
-.door-title {
-  color: #fff;
-  text-align: left;
+.svg-container .node rect {
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.svg-container .node text {
+  font-size: 20px;
+  color: black;
+}
+
+.svg-container {
+  overflow: hidden;
+}
+
+.svg-container .svg-inner {
+  cursor: move;
+}
+
+.svg-container svg.drag-over {
+  border: 3px dashed red;
 }
 
 .sidebar {
@@ -68,17 +46,38 @@ svg.drag-over {
   border-radius: 5px;
 }
 
-.dropped-item-list-item {
+.sidebar .dragable-item-dot {
+  border-radius: 50%;
+  min-height: 20px;
+  min-width: 20px;
+  display: inline-block;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.sidebar .door-title {
+  color: #fff;
+  text-align: left;
+}
+
+.dropped-items .dropped-item-list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.dropped-item-list-item span {
+.dropped-items .dropped-item-list-item span {
   font-size: 13px;
   cursor: pointer;
 }
 
-.modal-dialog .btn-close {
+.item-details-modal .modal-dialog .btn-close {
   display: none;
+}
+
+.item-details-modal .door-detail-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 10px;
 }
