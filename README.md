@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# Introduction
+
+This was developed as a proof of concept to show what can be done with [d3.js](https://d3js.org) and the control we have over Svg's. In this a sample floor plan svg, door nodes (`<g></g>`) can be embeded into the svg itself. 
+
+The following was achieved in this POC:
+* Drag and drop, dots (representing doors) in a `div` list into the svg after converting them into `<g></g>`.
+* The dropped door nodes can be moved and placed in a different location.
+* Zooming in and out, without changing the locations of the dropped door nodes.
+* Viewing more details of dropped doors.
+* Removing dropped door from the svg.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Screenshots
+
+[![image.png](https://i.postimg.cc/5tKMCJcX/image.png)](https://postimg.cc/XZ5PRTYW)
+
+[![image.png](https://i.postimg.cc/Wb169cxN/image.png)](https://postimg.cc/t78xTwXw)
+
+[![image.png](https://i.postimg.cc/Hx385VYQ/image.png)](https://postimg.cc/yggNC6Sd)
 
 ## Available Scripts
 
@@ -44,27 +61,3 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
